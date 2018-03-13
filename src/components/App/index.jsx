@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import Header from '../Header';
-import Movie from '../Movie';
 import movies from '../../movies.json';
 import MovieForm from '../MovieForm';
 import './styles.css';
+import List from "../MovieList";
 
 console.log(movies);
-export default class App extends Component {
 
+export default class App extends Component {
+    state = {
+        items: movies,
+    };
+    handleMovieDelete = name => {
+        this.setState (prevState => ({
+            items: prevState.items.filter(item => item.name !== name)
+        }));
+    };
   render() {
+      const { items } = this.state;
     return (
         <div className="app">
         <Header />
             <div className="app__body">
-            <div className="movieList">
-            {movies.map(movie => (
-                <div key={movie.name} className="movie-card">
-                    <Movie {...movie}/>
-                </div>
-            ))}
-            </div>
+            <List items={items} handleMovieDelete={this.handleMovieDelete} />
             <MovieForm />
             </div>
         </div>

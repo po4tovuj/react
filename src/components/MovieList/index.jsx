@@ -1,23 +1,11 @@
-// import React, { Component} from 'react';
-// import PropTypes from 'prop-types';
-// import "./styles.css";
-// export default class MovieList extends  Component {
-//     render() {
-//         return (
-//               <Movie {...movie} />
-//         )
-//     }
-// }
-//
-// //
-// // MoviesList.propTypes = {
-// //     movies: PropTypes.arrayOf(
-// //         PropTypes.shape({
-// //             id: PropTypes.string.isRequired,
-// //             name: PropTypes.string.isRequired,
-// //             description: PropTypes.string.isRequired,
-// //             rate: PropTypes.number.isRequired,
-// //             gender: PropTypes.string.isRequired,
-// //         }).isRequired
-// //     ).isRequired
-// // };
+    import React from 'react';
+    import Movie from '../Movie';
+
+    const List = ({items, ...rest})=> (
+        <div className="movieList">
+            {items.map(item => (
+                <Movie key={item.name} {...item} {...rest} className="movie-card" > </Movie>
+            ))}
+        </div>
+    );
+export default List;
