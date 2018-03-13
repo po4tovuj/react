@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.app {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 10px;
+    font-family: Roboto, sans-serif;
+}
+.app__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start
+}
+.movieList {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex: 0 0 62%;
+    flex: 0 0 62%;
+}
