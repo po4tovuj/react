@@ -1,6 +1,8 @@
-// import React, { Component} from 'react';
-// import PropTypes from 'prop-types';
-// import "./styles.css";
+import React from 'react';
+import "./styles.css";
+
+
+
 // export default class MovieList extends  Component {
 //     render() {
 //         return (
