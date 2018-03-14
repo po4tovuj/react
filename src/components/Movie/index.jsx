@@ -1,10 +1,9 @@
 import React from 'react';
 import "./styles.css";
-// import PropTypes from 'prop-types';
 
-const Movie = ({ name, description, rate, gender, handleMovieDelete }) => {
+const Movie = ({ name, description, rate, gender, handleMovieDelete, id }) => {
     const handleClickDel = () => {
-        handleMovieDelete(name);
+        handleMovieDelete(id);
     }
     return (
         <div key={name} className="movie-card">
@@ -19,4 +18,4 @@ const Movie = ({ name, description, rate, gender, handleMovieDelete }) => {
         </div>
     );
 }
-    export default Movie
+export default Movie

@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import Header from '../Header';
-import movies from '../../movies.json';
+import moviesArr from '../../movies.json';
 import MovieForm from '../MovieForm';
 import './styles.css';
 import List from "../MovieList";
-
+import v4 from 'uuid/v4';
+let movies = moviesArr.map(movie=>({
+    id: v4(),
+    ...movie
+}))
 console.log(movies);
 
 export default class App extends Component {
     state = {
         items: movies,
     };
-    handleMovieDelete = name => {
+    handleMovieDelete = id => {
         this.setState (prevState => ({
-            items: prevState.items.filter(item => item.name !== name)
+            items: prevState.items.filter(item => item.id !== id)
         }));
     };
   render() {
