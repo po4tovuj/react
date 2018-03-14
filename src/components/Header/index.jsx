@@ -1,6 +1,6 @@
 import React, {Component }from 'react';
-import Logo from '../logo';
-import HeaderNav from '../HeaderNav';
+import Logo from './logo';
+import HeaderNav from './HeaderNav';
 import './header.css';
 
 export default class Header extends Component {

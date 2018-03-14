@@ -1,0 +1,14 @@
+.chip-list {
+    display: flex;
+    width: 85%;
+    padding: 8px 0;
+    list-style: none;
+}
+.chip-list__items {
+    margin-right: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 2px;
+    background-color: #3f51b5;
+    color: #fff;
+}

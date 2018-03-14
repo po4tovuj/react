@@ -1,25 +1,12 @@
 import React from 'react';
-import "./styles.css";
+import Movie from '../Movie';
+import './styles.css';
 
-
-
-// export default class MovieList extends  Component {
-//     render() {
-//         return (
-//               <Movie {...movie} />
-//         )
-//     }
-// }
-//
-// //
-// // MoviesList.propTypes = {
-// //     movies: PropTypes.arrayOf(
-// //         PropTypes.shape({
-// //             id: PropTypes.string.isRequired,
-// //             name: PropTypes.string.isRequired,
-// //             description: PropTypes.string.isRequired,
-// //             rate: PropTypes.number.isRequired,
-// //             gender: PropTypes.string.isRequired,
-// //         }).isRequired
-// //     ).isRequired
-// // };
+const List = ({ items })=> (
+    <ul className="movieList">
+        {items.map(item => (
+            <Movie key={item.id} {...item} />
+        ))}
+        </ul>
+    );
+export default List;
