@@ -8,22 +8,43 @@ import v4 from 'uuid/v4';
 let movies = moviesArr.map(movie=>({
     id: v4(),
     ...movie
-}))
-console.log(movies);
+}));
 
 export default class App extends Component {
+    state = {
+        items: movies,
+    };
+    handleMovieDelete = id => {
+            this.setState (prevState => ({
+                items: prevState.items.filter(item => item.id !== id)
+            }));
+    };
+    handleMovieAdd = (title, description, rate, chips) => {
+        const newMovie = {
+            id: v4(),
+            title,
+            description,
+            rate,
+            chips,
+        };
+        this.setState(
+            prevState => ({
+                items: [...prevState.items, newMovie],
+            })
+        );
+    };
 
-  render() {
-      // const { items } = this.state;
-    return (
-        <div className="app">
-        <Header />
-            <div className="app__body">
-            <List items={movies} />
-            <MovieForm />
+    render() {
+        const { items } = this.state;
+        return (
+            <div className="app">
+                <Header />
+                <div className="app__body">
+                    <List items={items} handleMovieDelete={this.handleMovieDelete} />
+                    <MovieForm  handleMovieAdd={this.handleMovieAdd}/>
+                </div>
             </div>
-        </div>
-    );
-  }
+        );
+    }
 }
 

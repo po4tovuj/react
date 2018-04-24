@@ -1,12 +1,13 @@
 import React from 'react';
 import './styles.css';
+import v4 from 'uuid/v4';
 const ChipsList = ({ chips }) => {
-    // console.log(`chips is ${chips}`)
+    console.log(`chips is ${chips}`);
 
     return (
         <ul className="chip-list">
             {chips.map(chip => (
-                <li key={chip} className="chip-list__items">
+                <li key={v4()} id={v4()} className="chip-list__items">
                     {chip}
                 </li>
                 ))}

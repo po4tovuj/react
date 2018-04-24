@@ -39,3 +39,24 @@
     background-color:#ff5722;
     box-shadow:0 5px 5px 0 rgba(0,0,0,.3);
 }
+.movie-form__genres {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.movie-form__genres label {
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 8px;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #424242;
+    cursor: pointer;
+}
+.movie-form__genres input {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+}
